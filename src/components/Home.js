@@ -23,10 +23,21 @@ function Home() {
                             <div className="minmax">
                                 <span className='min'>18&#176;</span>/<span className='max'>28&#176;</span>
                             </div>
+                            <div className="description">
+                                Clear Sky
+                            </div>
                         </div>
                     </div>
                     <div className="lowerhalf">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut fugit, similique asperiores quidem id harum quasi eveniet recusandae voluptas facilis alias autem pariatur, suscipit rem adipisci. Quidem voluptatum tempora eligendi minima, nesciunt ducimus cum, hic dignissimos suscipit, delectus nobis architecto aperiam libero. Eligendi corrupti incidunt maiores doloribus facilis quo, harum vero quaerat! Quis, rem veritatis quod aspernatur dolorum, esse ipsam iusto ab asperiores minima fugit dolores magni praesentium delectus? Maiores quidem provident, doloremque, necessitatibus inventore consequatur repellat, quod illo amet aut temporibus facere quae maxime corporis reprehenderit atque architecto. Delectus quos et ut consequatur ea necessitatibus magnam laborum ipsam quidem.
+                            <div className="humidity">
+                                <h3>Humidity: </h3><span>100</span>
+                            </div>
+                            <div className="pressure">
+                                <h3>Pressure: </h3><span>1023</span>
+                            </div>
+                            <div className="speed">
+                                <h3>Speed: </h3><span>1.5</span>
+                            </div>
                     </div>
                 </div>
             </div>
