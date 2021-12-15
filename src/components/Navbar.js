@@ -1,16 +1,21 @@
 import React from 'react';
 import '../Styles/Navbar.css';
-import { FaCloudSunRain } from 'react-icons/fa';
+import { BsFillLightningChargeFill } from 'react-icons/bs';
 
 function Navbar() {
     return (
         <div className="nav">
+            <div className="left">
             <span className="logoCont">
-                <FaCloudSunRain />
+                <BsFillLightningChargeFill />
             </span>
-            <h4 className="appName">
+            <h2 className="appName">
                 Weather App
-            </h4>
+            </h2>
+            </div>
+            <div className="right">
+                <input type="text" placeholder='Enter your city' />
+            </div>
         </div>
     )
 }

@@ -2,23 +2,55 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Harry Potter', sans-serif;                                 
 }
 .nav{
     /* border: 2px solid black; */
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding-left: 1rem;
-    padding-top: 0.5rem;
+    /* padding-top: 0.5rem; */
     position: fixed;
+    z-index: 10;
+    color: white;
+    width: 100vw;
+    height: 4rem;
 }
-.appName{
-    /* border: 2px solid black; */
+.left{
+    height: 100%;
+    /* border: 5px solid red; */
+    align-items: flex-end;
+    justify-items: center;
+    display: flex;
 }
 .logoCont{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     /* border: 2px solid black; */
-    font-size: 3rem;
+    display: flex;
+    font-size: 2.2rem;
     margin-right: 1rem;
+    margin-bottom: 0.3rem;
+}
+.appName{
+    margin: 0;
+    padding: 0;
+    align-self: flex-end;
+    font-size: 1.8rem;
+    /* border: 2px solid black; */
+}
+.right{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    /* border: 5px solid red; */
+    margin-right: 1rem;
+}
+.right input{
+    padding-left: 1rem;
+    font-size: 0.9rem;
+    height: 65%;
+    border-radius: 0.4rem;
+    border: none;
 }
