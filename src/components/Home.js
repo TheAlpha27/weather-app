@@ -1,8 +1,20 @@
 import React from 'react'
+import { useEffect } from 'react';
 import '../Styles/Home.css'
 import sunny from '../Images/Sunny.png';
+import axios from 'axios';
 
 function Home() {
+    // useEffect(() => {
+    //     console.log('inside useeffect');
+    //     const fetchData = async ()=> {
+    //         const res = await axios.get(
+    //             `https://api.openweathermap.org/data/2.5/weather?q=Mumbai&appid=a8aa5613babf07197c33fc2de09dd864`
+    //             );
+    //         console.log(res.data);
+    //     }
+    //     fetchData();
+    // }, []);
     return (
         <div className="container-fluid bg">
             <div className="container-fluid main">

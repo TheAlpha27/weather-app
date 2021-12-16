@@ -1,6 +1,7 @@
 import React from 'react';
 import '../Styles/Navbar.css';
 import { BsFillLightningChargeFill } from 'react-icons/bs';
+import {AiOutlineSearch} from 'react-icons/ai';
 
 function Navbar() {
     return (
@@ -15,6 +16,7 @@ function Navbar() {
             </div>
             <div className="right">
                 <input type="text" placeholder='Enter your city' />
+                <button className="btn btn-dark"><AiOutlineSearch/></button>
             </div>
         </div>
     )
