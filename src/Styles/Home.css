@@ -1,7 +1,7 @@
 .bg{
     /* border: 5px solid black; */
     height: 100vh;
-    background-image: url(https://www.thepatent.news/wp-content/uploads/2020/09/hogwarts-4843724_1920.jpg);
+    background-image: url(https://steamuserimages-a.akamaihd.net/ugc/1695024823120015526/A7F04F93EA4353BB31C494814C029D53145B1C0C/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -76,7 +76,7 @@
 .minmax{
     /* border: 4px solid black; */
     width: fit-content;
-    font-size: 4rem;
+    font-size: 3.5rem;
 }
 .description{
     margin-top: 1rem;

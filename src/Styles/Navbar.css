@@ -64,3 +64,9 @@
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
+.right label{
+    /* border: 2px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
