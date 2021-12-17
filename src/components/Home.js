@@ -1,7 +1,6 @@
 import React from 'react'
 import { useEffect } from 'react';
 import '../Styles/Home.css'
-import sunny from '../Images/Sunny.png';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -9,7 +8,7 @@ import { action } from '../Store/index';
 
 function Home() {
     const dispatch = useDispatch();
-    const { cityName, currTemp, minTemp, maxTemp, currDate, humidity, pressure, speed, weather, weatherDesc } = bindActionCreators(action, dispatch);
+    const { cityName, currTemp, minTemp, maxTemp, currDate, humidity, pressure, speed, weather, weatherDesc, weatherBG, weatherIcon } = bindActionCreators(action, dispatch);
 
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -25,6 +24,9 @@ function Home() {
     const speedState = useSelector(state => state.speed);
     const weatherState = useSelector(state => state.weather);
     const weatherDescState = useSelector(state => state.weatherDesc);
+    const weatherBGState = useSelector(state => state.weatherBG);
+    const weatherIconState = useSelector(state => state.weatherIcon);
+
     // console.log(cityNameState, currTempState, minTempState, maxTempState, currDateState, humidityState, pressureState, speedState, weatherState, weatherDescState);
 
     useEffect(() => {
@@ -48,13 +50,40 @@ function Home() {
             speed(res.data.wind.speed);
             weather(res.data.weather[0].main);
             weatherDesc(res.data.weather[0].description);
+            weatherIcon(`http://openweathermap.org/img/wn/${res.data.weather[0].icon}@2x.png`);
         };
         fetchData();
         
     }, [cityState, unitState]);
 
+    if (weatherState === 'Thunderstorm') {
+        weatherBG('https://c4.wallpaperflare.com/wallpaper/809/963/715/rain-harry-potter-art-harry-potter-the-shower-hd-wallpaper-preview.jpg');
+    }
+    else if (weatherState === 'Drizzle' || weatherState === 'Rain') {
+        weatherBG('https://images3.alphacoders.com/556/thumb-1920-556432.jpg');
+    }
+    else if (weatherState === 'Snow') {
+        weatherBG('https://wallpaperaccess.com/full/195088.jpg');
+    }
+    else if (weatherState === 'Clear') {
+        weatherBG('https://foreveramber.co.uk/wp-content/uploads/2012/07/wizarding-world-of-harry-potter.jpg');
+
+    }
+    else if (weatherState === 'Clouds') {
+        weatherBG('https://data.whicdn.com/images/261261409/original.jpg');
+
+    }
+    else {
+        weatherBG('https://data.whicdn.com/images/308248727/original.jpg');
+    }
+    let bgElem = document.getElementById('bgIMG');
+
+    if(bgElem!==null){
+        document.getElementById('bgIMG').style.backgroundImage = `url(${weatherBGState})`;
+    }    
+
     return (
-        <div className="container-fluid bg">
+        <div className="container-fluid bg" id='bgIMG'>
             <div className="container-fluid main">
                 <div className="container contentBox">
                     <div className="upperhalf">
@@ -62,16 +91,16 @@ function Home() {
                             <h1 className='city'>{cityNameState}</h1>
                             <h4 className='date'>{currDateState}</h4>
                             <div className="weather">
-                                <img src={sunny} alt="Weather" />
+                                <img src={weatherIconState} alt="Weather" />
                                 <span>{weatherState}</span>
                             </div>
                         </div>
                         <div className="upright">
                             <div className="currTemp">
-                                <span>{currTempState}{unitState==="metric"?'\xB0C':'F'}</span>
+                                <span>{currTempState}{unitState === "metric" ? '\xB0C' : 'F'}</span>
                             </div>
                             <div className="minmax">
-                                <span className='min'>{minTempState}{unitState==="metric"?'\xB0C':'F'}</span>/<span className='max'>{maxTempState}{unitState==="metric"?'\xB0C':'F'}</span>
+                                <span className='min'>{minTempState}{unitState === "metric" ? '\xB0C' : 'F'}</span>/<span className='max'>{maxTempState}{unitState === "metric" ? '\xB0C' : 'F'}</span>
                             </div>
                             <div className="description">
                                 {weatherDescState}
@@ -83,10 +112,10 @@ function Home() {
                             <h3>Humidity: </h3><span>{humidityState}%</span>
                         </div>
                         <div className="pressure">
-                            <h3>Pressure: </h3><span>{pressureState}hPa</span>
+                            <h3>Pressure: </h3><span>{pressureState} hPa</span>
                         </div>
                         <div className="speed">
-                            <h3>Speed: </h3><span>{speedState}{unitState==="metric"?'meter/sec':'miles/hour'}</span>
+                            <h3>Speed: </h3><span>{speedState}{unitState === "metric" ? ' meter/sec' : ' miles/hour'}</span>
                         </div>
                     </div>
                 </div>

@@ -96,6 +96,22 @@ const weatherDescReducer = (state = null, action) => {
         return state;
     }
 };
+const weatherBGReducer = (state = 'https://data.whicdn.com/images/308248727/original.jpg', action) => {
+    if (action.type === 'weatherBG') {
+        return action.payload;
+    }
+    else {
+        return state;
+    }
+};
+const weatherIconReducer = (state = 'http://openweathermap.org/img/wn/50d@2x.png', action) => {
+    if (action.type === 'weatherIcon') {
+        return action.payload;
+    }
+    else {
+        return state;
+    }
+};
 const reducers = combineReducers({
     city: cityReducer,
     unit: unitReducer,
@@ -108,7 +124,9 @@ const reducers = combineReducers({
     pressure: pressureReducer,
     speed: speedReducer,
     weather: weatherReducer,
-    weatherDesc: weatherDescReducer
+    weatherDesc: weatherDescReducer,
+    weatherBG: weatherBGReducer,
+    weatherIcon: weatherIconReducer
 });
 
 export default reducers;

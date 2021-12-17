@@ -94,3 +94,19 @@ export const weatherDesc = (weatherDesc) =>{
         })
     }
 };
+export const weatherBG = (weatherBG) =>{
+    return (dispatch) => {
+        dispatch({
+            type: 'weatherBG',
+            payload: weatherBG
+        })
+    }
+};
+export const weatherIcon = (weatherIcon) =>{
+    return (dispatch) => {
+        dispatch({
+            type: 'weatherIcon',
+            payload: weatherIcon
+        })
+    }
+};

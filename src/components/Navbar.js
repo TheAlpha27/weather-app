@@ -10,11 +10,11 @@ function Navbar() {
     const dispatch = useDispatch();
     const { city, units } = bindActionCreators(action, dispatch);
 
-    const UpdateStates = () => {
-        city(document.getElementById('myCity').value);
-        units(document.querySelector('input[name="units"]:checked').value);
-        // console.log(document.querySelector('input[name="units"]:checked').value);
-    }
+    // const UpdateStates = () => {
+    //     city(document.getElementById('myCity').value);
+    //     units(document.querySelector('input[name="units"]:checked').value);
+    //     // console.log(document.querySelector('input[name="units"]:checked').value);
+    // }
 
     return (
         <div className="nav">
@@ -27,10 +27,10 @@ function Navbar() {
                 </h2>
             </div>
             <div className="right">
-                <label htmlFor="metric">Metric <input onClick={() => { UpdateStates() }} className='mx-1' type="radio" name="units" value="metric" id="metric" checked /> </label>
-                <label className='mx-1' htmlFor="imperial"> Imperial <input onClick={() => { UpdateStates() }} className='mx-1' type="radio" name="units" value="imperial" id="imperial" /> </label>
+                <label htmlFor="metric">Metric <input onClick={() => { units(document.querySelector('input[name="units"]:checked').value); }} className='mx-1' type="radio" name="units" value="metric" id="metric" defaultChecked /> </label>
+                <label className='mx-1' htmlFor="imperial"> Imperial <input onClick={() => { units(document.querySelector('input[name="units"]:checked').value); }} className='mx-1' type="radio" name="units" value="imperial" id="imperial" /> </label>
                 <input type="text" id='myCity' name='myCity' placeholder='Enter your city' />
-                <button className="btn btn-dark" onClick={() => { UpdateStates() }}><AiOutlineSearch /></button>
+                <button className="btn btn-dark" onClick={() => { city(document.getElementById('myCity').value); }}><AiOutlineSearch /></button>
             </div>
         </div>
     )
