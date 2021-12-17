@@ -92,7 +92,7 @@ function Home() {
                             <h4 className='date'>{currDateState}</h4>
                             <div className="weather">
                                 <img src={weatherIconState} alt="Weather" />
-                                <span>{weatherState}</span>
+                                <span>Status: {weatherState}</span>
                             </div>
                         </div>
                         <div className="upright">
@@ -103,7 +103,7 @@ function Home() {
                                 <span className='min'>{minTempState}{unitState === "metric" ? '\xB0C' : 'F'}</span>/<span className='max'>{maxTempState}{unitState === "metric" ? '\xB0C' : 'F'}</span>
                             </div>
                             <div className="description">
-                                {weatherDescState}
+                                Description: {weatherDescState}
                             </div>
                         </div>
                     </div>
