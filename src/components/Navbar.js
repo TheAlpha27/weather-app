@@ -27,10 +27,14 @@ function Navbar() {
                 </h2>
             </div>
             <div className="right">
+                <div className='radioCont'>
                 <label htmlFor="metric">Metric <input onClick={() => { units(document.querySelector('input[name="units"]:checked').value); }} className='mx-1' type="radio" name="units" value="metric" id="metric" defaultChecked /> </label>
                 <label className='mx-1' htmlFor="imperial"> Imperial <input onClick={() => { units(document.querySelector('input[name="units"]:checked').value); }} className='mx-1' type="radio" name="units" value="imperial" id="imperial" /> </label>
+                </div>
+                <div className='inpCont'>
                 <input type="text" id='myCity' name='myCity' placeholder='Enter your city' />
                 <button className="btn btn-dark" onClick={() => { city(document.getElementById('myCity').value); }}><AiOutlineSearch /></button>
+                </div>
             </div>
         </div>
     )

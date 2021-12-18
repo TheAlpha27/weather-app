@@ -64,9 +64,63 @@
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
+.radioCont{
+    display: flex;
+}
 .right label{
     /* border: 2px solid black; */
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.inpCont{
+    display: flex;
+}
+@media screen and (max-width: 825px) {
+    .nav{
+        height: fit-content;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-top: 2vh;
+    }
+    .left{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .right{
+        margin: 0;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1.2vh;
+    }
+    .logoCont{
+        margin: 0;
+        font-size: 3vh;
+    }
+    .appName{
+        margin-left: 0.8vh;
+        font-size: 3vh;
+    }
+    .right input{
+        padding: 0;
+        font-size: 1.5vh;
+        padding-left: 1vh;
+        height: 4.3vh;
+        border-radius: 0.2rem;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .right button{
+        height: 4.3vh;
+        font-size: 1.8vh;
+    }
+    .radioCont label{
+        font-size: 1.5vh;
+    }
+    .inpCont{
+        margin-right: 2vh;
+    }
 }

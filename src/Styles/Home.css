@@ -11,7 +11,7 @@
 .main{
     /* border: 5px solid white; */
     background-color: rgba(0, 0, 0, 0.4);
-    height: inherit;
+    height: 100vh;
     backdrop-filter: blur(2px);
     display: flex;
     align-items: center;
@@ -100,4 +100,57 @@
 .lowerhalf span{
     margin-left: 0.5rem;
     font-size: 1.3rem;
+}
+@media screen and (max-width: 1190px) {
+    .currTemp span{
+        font-size: 10rem;
+    }
+}
+@media screen and (max-width: 840px) {
+    .upperhalf{
+        margin: 0;
+        flex-direction: column;
+    }
+    .upleft{
+        /* border: 2px solid yelslow; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .currTemp span{
+        height: min-content;
+        font-size: 8vh;
+    }
+    .minmax{
+        font-size: 3vh;
+    }
+    .lowerhalf{
+        padding: 0;
+        margin: 0;
+        flex-direction: column;
+        width: min-content;
+        justify-self: center;
+        align-self: center;
+    }
+    .lowerhalf div{
+        width: max-content;
+        margin-bottom: 1vh;
+    }
+    .description{
+        margin-bottom: 1.5vh;
+    }
+    .description, .date, .weather, .lowerhalf span, .lowerhalf h3{
+        font-size: 2.5vh;
+    }
+    .city{
+        font-size: 7vh;
+    }
+    .weather{
+        flex-direction: row;
+        width: max-content;
+    }
+    .weather img{
+        height: 20vh;
+    }
 }
