@@ -27,13 +27,15 @@ function Home() {
     const weatherBGState = useSelector(state => state.weatherBG);
     const weatherIconState = useSelector(state => state.weatherIcon);
 
+    const API_KEY = process.env.REACT_APP_WEATHER_API;
+
     // console.log(cityNameState, currTempState, minTempState, maxTempState, currDateState, humidityState, pressureState, speedState, weatherState, weatherDescState);
 
     useEffect(() => {
         // console.log('inside useeffect');
         const fetchData = async () => {
             const res = await axios.get(
-                `https://api.openweathermap.org/data/2.5/weather?q=${cityState}&units=${unitState}&appid=a8aa5613babf07197c33fc2de09dd864`
+                `https://api.openweathermap.org/data/2.5/weather?q=${cityState}&units=${unitState}&appid=${API_KEY}`
             );
             cityName(res.data.name);
             currTemp(res.data.main.temp);
